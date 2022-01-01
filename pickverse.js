@@ -1209,22 +1209,28 @@ function run(){
   out=value[i][0]+" "+value[i][2]+":"+q;
   url="https://www.bible.com/ko/bible/142/"+value[i][1]+"."+value[i][2]+"."+q;
   word.innerText="..뽑는중..";
+  $.ajax({
+    type: "GET",
+    url: "https://script.google.com/macros/s/AKfycbzawPKMrk8hphT9GV2KxCX05SAXgtl-Fk-palYXxzSFvvymgrQjg2uOARAUQj1osjn7/exec",
+    data: {
+      "성경구절": out,
+      "주소": url
+    }
+  });
+
+
+  
 
   setTimeout(function() {
     word.innerText=out;
     link.href=url;
     link.innerText="성경구절보기";
-  }, 2500);
-
-  
-  
+  }, 2000);
   
 }
+
 
 
 function randB(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
- r=Math.floor(Math.random() * 31102) + 1;
