@@ -1209,11 +1209,14 @@ function run(){
   out=value[i][0]+" "+value[i][2]+":"+q;
   url="https://www.bible.com/ko/bible/142/"+value[i][1]+"."+value[i][2]+"."+q;
   word.innerText="..뽑는중..";
+  var d = new Date();
+
   $.ajax({
     type: "GET",
     url: "https://script.google.com/macros/s/AKfycbzawPKMrk8hphT9GV2KxCX05SAXgtl-Fk-palYXxzSFvvymgrQjg2uOARAUQj1osjn7/exec",
     data: {
-      "ip": r,
+      "time": d,
+      "r":r,
       "성경구절": out,
       "주소": url
     }
