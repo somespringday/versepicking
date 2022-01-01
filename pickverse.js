@@ -1208,9 +1208,15 @@ function run(){
 
   out=value[i][0]+" "+value[i][2]+":"+q;
   url="https://www.bible.com/ko/bible/142/"+value[i][1]+"."+value[i][2]+"."+q;
+  word.innerText="..뽑는중..";
 
-  word.innerText=out;
-  link.href=url;
+  setTimeout(function() {
+    word.innerText=out;
+    link.href=url;
+    link.innerText="성경구절보기";
+  }, 2500);
+
+  
   
   
 }
@@ -1219,3 +1225,6 @@ function run(){
 function randB(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+ r=Math.floor(Math.random() * 31102) + 1;
