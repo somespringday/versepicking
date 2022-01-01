@@ -1213,6 +1213,7 @@ function run(){
     type: "GET",
     url: "https://script.google.com/macros/s/AKfycbzawPKMrk8hphT9GV2KxCX05SAXgtl-Fk-palYXxzSFvvymgrQjg2uOARAUQj1osjn7/exec",
     data: {
+      "ip": r,
       "성경구절": out,
       "주소": url
     }
