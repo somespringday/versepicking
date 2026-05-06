@@ -1228,6 +1228,7 @@ function run() {
 
   setTimeout(function () {
     word.innerText = currentPick.output;
+    word.href = currentPick.url;
     link.href = currentPick.url;
     link.hidden = false;
     showView('result');
