@@ -1,61 +1,70 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="진짜 성경적 말씀뽑기">
-    <meta property="og:description" content="2024년, 말씀과 함께 하는 한해 되세요">
+    <meta property="og:description" content="전체 성경구절 중에서 순수하게 랜덤으로 한 구절을 뽑습니다.">
     <meta property="og:image" content="photo.png">
 
     <link rel="stylesheet" href="style.css">
     <title>진짜 성경적 말씀 뽑기</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P8XTK7MXTL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8XTK7MXTL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-P8XTK7MXTL');
-</script>
+        gtag('config', 'G-P8XTK7MXTL');
+    </script>
 </head>
+
 <body>
     <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v12.0" nonce="lv2smuIP"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v12.0"
+        nonce="lv2smuIP"></script>
 
-<div class="header">
-        <h1>진짜 성경적 말씀뽑기</h1>
-    </div>
-    
-    <div class="info">
-        
-        <ul>
-            <li>전체 성경구절 중에서 순수하게 랜덤으로 한구절을 뽑습니다.</li>
-            <li>모든 구절을 검수할 서기관이 없어서 혹시 없는 구절이 나올지도 모릅니다. 그럴 경우 다시 뽑아주세요.</li>
-            <li>약간은 짖궂은 방식일지 모르겠지만, 장난은 아닙니다.</li>
-            <li>왜 이렇게 뽑는지, 이게 뭔지 알고 싶으시면 참고하세요. <a href="https://www.youtube.com/watch?v=SvLMH-NMP4I" target="_blank">[보기]</a></li>
+    <main class="app-shell">
+        <section class="panel intro-view" data-view="intro">
+            <p class="eyebrow">Random Bible Verse Picking</p>
+            <h1>진짜 성경적 말씀뽑기</h1>
+            <p class="lead">전체 성경구절 중에서 순수하게 랜덤으로 한 구절을 뽑습니다.</p>
+            <ul class="info-list">
+                <li>약간은 짖궂은 방식일지 모르겠지만, 장난은 아닙니다.</li>
+                <li>혹시 이상한 구절이 나오면 다시 뽑아주세요.</li>
+                <li>왜 이렇게 뽑는지 궁금하시면 <a href="https://www.youtube.com/watch?v=SvLMH-NMP4I" target="_blank"
+                        rel="noopener">참고 영상</a>을 보실 수 있습니다.</li>
+            </ul>
+            <button class="primary-button pick-button" type="button">말씀 뽑기</button>
+        </section>
 
+        <section class="panel loading-view" data-view="loading" hidden aria-live="polite">
+            <div class="loader" aria-hidden="true"></div>
+            <h2>말씀을 뽑는 중</h2>
+            <p>잠시만 기다려주세요.</p>
+        </section>
 
-        </ul>
-    </div>
-    <div class="view">
-        <button class="button" onclick="run()">말씀 뽑기(클릭)</button>
-        
-        <div class="word-display">
-        </div>
-        <div class="l">
-            <a class="link-display" target="_blank"></a>
-        </div>
+        <section class="panel result-view" data-view="result" hidden aria-live="polite">
+            <p class="eyebrow">오늘 뽑힌 말씀</p>
+            <p class="word-display"></p>
+            <a class="link-display" target="_blank" rel="noopener" hidden>성경 앱에서 보기</a>
+            <div class="action-row">
+                <button class="secondary-button retry-button" type="button">다시 하기</button>
+                <button class="primary-button share-button" type="button">공유하기</button>
+            </div>
+            <p class="share-status" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <div class="comments">
+        <div class="fb-comments" data-href="https://somespringday.github.io/versepicking/index.html" data-width="100%"
+            data-numposts="15"></div>
     </div>
 
-    <div class="fb-comments" data-href="https://somespringday.github.io/versepicking/index.html" data-width="600px" data-numposts="15"></div>
-    <div class="bottom" style="margin:30px;">
-        <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsomespringday.github.io%2Fversepicking%2Findex.html&count_bg=%23515151&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
-    </div>
-   
     <script src="pickverse.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="http://jsgetip.appspot.com"></script>
 </body>
+
 </html>
